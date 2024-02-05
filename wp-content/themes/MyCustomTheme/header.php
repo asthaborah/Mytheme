@@ -21,20 +21,10 @@
             </div>
 
             <div class="menu text-right">
-                <ul>
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="categories.html">Categories</a>
-                    </li>
-                    <li>
-                        <a href="foods.html">Foods</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                </ul>
+                <!-- calling the menu in the user end -->
+                <?php 
+                    wp_nav_menu(array('theme_location' => 'primary-menu' , 'menu_class' => 'nav'))
+                ?>
             </div>
 
             <div class="clearfix"></div>

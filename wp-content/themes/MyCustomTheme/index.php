@@ -1,10 +1,6 @@
-<?php //echo get_template_directory_uri();
-        //bloginfo('template_directory'); 
+<?php 
     get_header();        
 ?>
-
-
-
     <!-- fOOD sEARCH Section Starts Here -->
     <section class="food-search text-center">
         <div class="container">
@@ -16,7 +12,7 @@
 
         </div>
     </section>
-    <!-- fOOD sEARCH Section Ends Here -->
+
 
     <!-- CAtegories Section Starts Here -->
     <section class="categories">

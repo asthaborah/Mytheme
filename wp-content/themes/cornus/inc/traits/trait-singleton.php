@@ -1,6 +1,8 @@
 <?php 
 
-class singleton{
+namespace CORNUS_THEME\Inc\Traits;
+
+trait singleton{
     public function __construct(){
 
     }
@@ -16,7 +18,7 @@ class singleton{
         if(!isset($instance[$class_name])){
             $instance[$class_name] = new $class_name();
             //if any function want to hook into custom hook at this point
-            do_action(sprintf('unisus_theme_singleton_init%s') , $class_name);
+            do_action(sprintf('cornus_theme_singleton_init%s' , $class_name));
         }
 
         return $instance[$class_name];

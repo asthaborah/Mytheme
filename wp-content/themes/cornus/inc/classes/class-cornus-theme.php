@@ -17,6 +17,7 @@ class CORNUS_THEME{
     use singleton;
     protected function __construct(){
         //load class
+        Menus::get_instance();
         Assets::get_instance();
         $this-> setup_hooks();
     }
@@ -66,5 +67,18 @@ class CORNUS_THEME{
             'script',
             'style',
         ]);
+
+        add_editor_style();
+
+        add_theme_support('wp-block-styles');
+
+        add_theme_support('align-wide');
+
+        //for setting max-width of the content
+        global $content_width;
+
+        if(!isset($content_width)){
+            $content_width = 1240;
+        }
     }
 }

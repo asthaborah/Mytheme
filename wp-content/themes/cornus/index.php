@@ -8,7 +8,9 @@
 get_header();
 ?>
 
-<p>This is content</p>
+<div class="content">
+    <?php esc_html_e('Content Index' , 'Cornus'); ?>
+</div>
 
 <?php 
 get_footer();

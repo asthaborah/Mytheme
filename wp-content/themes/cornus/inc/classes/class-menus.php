@@ -38,9 +38,20 @@ class Menus{
         //get the id by the theme location
         $menu_id = $locations[$location];
 
-        return !empty ($menu_id) ? $menu_id : '';
+        return !empty ($menu_id) ? $menu_id : '';       
+    }
 
+    public function get_menu_child_class($menu_array , $parent_id){
+        $child_menu = [];
+        if(!empty($menu_array) && is_array($menu_array)){
+            foreach($menu_array as $menu){
+                if(intval($menu->menu_item_parent) === $parent_id){
+                    array_push($child_menu , $menu);
+                }
+            }
+        }
         
+        return $child_menu;
     }
     
 }

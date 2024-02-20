@@ -14,7 +14,7 @@ get_header();
         <!-- extracting post -->
         <?php 
 
-        if(have_posts()){ // checks if the post is thereor not 
+        if(have_posts()) :  // checks if the post is thereor not 
             ?>
             <div class="container">
                 <!-- getting the title of the page -->
@@ -42,10 +42,7 @@ get_header();
                             <?php 
                         }
 
-                        ?>
-                        <h3><?php  the_title(); //set the post data in the title template?></h3>
-                        <div><?php the_excerpt(); //set the post data in the content template?></div>
-                        <?php
+                        get_template_part('template-parts/content');
                                    
                         $index ++;
                         if(0 !== $index && 0 === $index % $no_of_columns){ //index is not 0 but it's remainder is getting 0 then end the div
@@ -58,8 +55,9 @@ get_header();
                     </div>
             </div>
             <?php
-        }
-        
+        else : 
+            get_template_part('template-parts/content-none');   
+        endif;
         ?>
     </main>
 </div>

@@ -29,12 +29,33 @@ get_header();
                         <?php
                     }
                 ?>
-                <?php                 
-                    while(have_posts()) : the_post();
-                    the_title(); //set the post data in the title template
-                    the_content(); //set the post data in the content template
-                    endwhile;
-                ?>
+                    <!-- adding grid -->
+                    <div class="row">
+                        <?php
+                        $index = 0;
+                        $no_of_columns = 3;
+                        while(have_posts()) : the_post();
+                        //checking if the remainder is 0 then only print column
+                        if(0 === $index % $no_of_columns){
+                            ?>
+                            <div class="col-lg-4 col-md-6 col-sm-12">    
+                            <?php 
+                        }
+
+                        ?>
+                        <h3><?php  the_title(); //set the post data in the title template?></h3>
+                        <div><?php the_excerpt(); //set the post data in the content template?></div>
+                        <?php
+                                   
+                        $index ++;
+                        if(0 !== $index && 0 === $index % $no_of_columns){ //index is not 0 but it's remainder is getting 0 then end the div
+                            ?>
+                            </div>
+                            <?php
+                        }
+                        endwhile;
+                        ?>
+                    </div>
             </div>
             <?php
         }

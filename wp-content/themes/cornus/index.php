@@ -34,6 +34,7 @@ get_header();
                         <?php
                         $index = 0;
                         $no_of_columns = 3;
+                        // loop starts here 
                         while(have_posts()) : the_post();
                         //checking if the remainder is 0 then only print column
                         if(0 === $index % $no_of_columns){

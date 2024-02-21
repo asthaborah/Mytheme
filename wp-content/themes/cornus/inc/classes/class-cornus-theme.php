@@ -19,6 +19,7 @@ class CORNUS_THEME{
         //load class
         Menus::get_instance();
         Assets::get_instance();
+        Meta_Boxes::get_instance();
         $this-> setup_hooks();
     }
 

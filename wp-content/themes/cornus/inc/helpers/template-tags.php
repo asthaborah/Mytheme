@@ -25,7 +25,7 @@
     $attributes = array_merge($additional_attributes , $default_atttribute);
 
     $custom_thumbnail = wp_get_attachment_image(
-        get_post_thumbnail_id($post_id) , $size , false , $additional_attributes
+        get_post_thumbnail_id($post_id) , $size , false , $attributes
     );
 
     

@@ -50,8 +50,16 @@ class CORNUS_THEME{
             'default-repeat' => 'no-repeat',
         ]);
 
-        //adding thumbnail
+        /**
+         * adding thumbail
+         */
         add_theme_support('post-thumbnails');
+
+        /**
+         * Registering image sizes
+         */
+
+        add_image_size('featured-thumbnail' , 350 , 233, true);
 
         //selective refresh
         add_theme_support('customize-selective-refresh-widgets');

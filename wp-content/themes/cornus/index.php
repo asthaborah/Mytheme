@@ -14,7 +14,7 @@ get_header();
         <!-- extracting post -->
         <?php 
 
-        if(have_posts()) :  // checks if the post is thereor not 
+        if(have_posts()) :  // checks if the post is there or not 
             ?>
             <div class="container">
                 <!-- getting the title of the page -->
@@ -41,7 +41,6 @@ get_header();
                             <div class="col-lg-4 col-md-6 col-sm-12">    
                             <?php 
                         }
-
                         get_template_part('template-parts/content');
                                    
                         $index ++;

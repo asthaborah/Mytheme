@@ -17,6 +17,7 @@
  }
 
  require_once CORNUS_DIR_PATH . "/inc/helpers/autoloader.php";
+ require_once CORNUS_DIR_PATH . "/inc/helpers/template-tags.php";
 
  
 

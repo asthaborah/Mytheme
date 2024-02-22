@@ -38,7 +38,7 @@ class Meta_Boxes
                 <?php      
                 add_meta_box(
                     'hide-page-title', //unique id of the div
-                    __('<p style = "border: 1px solid green">Hide page title</p>', 'Cornus'), //Box title
+                    __('<p style = "border: 1px solid green;" class = "mt-5">Hide page title</p>', 'Cornus'), //Box title
                     [$this, 'custom_meta_box_html'], //content callback
                     $screen, // Post type
                     'advanced', // context
@@ -51,6 +51,11 @@ class Meta_Boxes
 
     public function custom_meta_box_html($post)
     {
+        /**
+         * Create a nonce
+         */
+
+        wp_nonce_field( plugin_basename(__FILE__) , 'hide_title_meta_box_name');
         $value = get_post_meta($post->ID, '_hide_page_title', true); // retrieves the value for the specified post id and key 
         ?>
         <label for="Cornus-field">
@@ -73,6 +78,24 @@ class Meta_Boxes
     //saving the meta data in the database
     public function save_post_meta_data($post_id)
     {
+        /**
+         * When the post is saved or updated we will verify the nonce 
+         * check if the current user is authorized
+         */
+
+        //checking if the user can edit a post
+        if(! current_user_can('edit_post' , $post_id)){
+            return; 
+        }
+
+        /**
+         * check if the nonce value we recieved is the same we created
+         */
+
+        if(!isset($_POST['hide_title_meta_box_name']) || ! wp_verify_nonce(plugin_basename(__FILE__) , $_POST['hide_title_meta_box_name'])){
+            return;
+        }
+
         if (array_key_exists('Cornus_hide_title_field', $_POST)) {
             update_post_meta(
                 $post_id, //id for the post

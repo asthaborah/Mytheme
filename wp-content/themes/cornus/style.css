@@ -18,3 +18,8 @@
 img{
     width: 100%;
 }
+
+/* Entry Meta*/
+.updated:not(.published){
+    display: none;
+}

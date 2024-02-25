@@ -1,9 +1,8 @@
 <?php 
-/*
-**
-*@package cornus
-**
-*/ 
+/**
+ * 
+ * @package Cornus
+ */
 
 get_header();
 ?>
@@ -23,7 +22,8 @@ get_header();
                         ?>
                             <header class="mb-5">
                                 <h1 class="page-title"> <!--screen-reader-text-->
-                                    <?php single_post_title();?>
+                                    <?php single_post_title();?> <!-- to get the title of the blog -->
+                                    
                                 </h1>
                             </header>
                         <?php
@@ -44,7 +44,7 @@ get_header();
                         }
                         get_template_part('template-parts/content');
                                    
-                        $index ++;
+                        $index++;
                         if(0 !== $index && 0 === $index % $no_of_columns){ //index is not 0 but it's remainder is getting 0 then end the div
                             ?>
                             </div>

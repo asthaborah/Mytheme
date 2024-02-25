@@ -72,3 +72,17 @@ function Cornus_posted_by(){
    echo '<span class = "byline text-secondary">' . $byline . '</span>';
 }
 
+function Cornus_the_excerpt( $trim_character_count = 0){
+    if(! has_excerpt() || $trim_character_count === 0){
+        the_excerpt();
+        return;
+    }
+
+    $excerpt = wp_strip_all_tags(get_the_excerpt());
+    $excerpt = substr($excerpt , 0 , $trim_character_count);
+    
+    $excerpt= substr($excerpt , 0 , strrpos($excerpt , " "));
+
+    echo $excerpt . "[...]";
+}
+

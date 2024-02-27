@@ -28,6 +28,10 @@
                 the_title('<span class = "screen-text-reader">"' , '"</span>' , false))
 
             );
+            wp_link_pages([
+                'before' => '<div class = "page-links">' . esc_html('Pages:' , 'Cornus'),
+                'after'  => '</div>',
+            ]);
         }else{
             // if you are in the blog page
             Cornus_the_excerpt(400);

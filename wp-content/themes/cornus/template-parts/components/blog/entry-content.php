@@ -11,7 +11,7 @@
     <?php 
         //if you are in the posts page
         if(is_single()){
-            sprintf(
+            the_content(sprintf(
                 /**
                  * Used to filter out html tags
                  */
@@ -25,7 +25,7 @@
                 /**
                  * Fetches the title of the post
                  */
-                the_title('<span class = "screen-reader-text">"' , '"</span>' , false)
+                the_title('<span class = "screen-text-reader">"' , '"</span>' , false))
 
             );
         }else{

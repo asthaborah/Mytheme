@@ -28,6 +28,7 @@
                 the_title('<span class = "screen-text-reader">"' , '"</span>' , false))
 
             );
+            //adding link for paginated pages
             wp_link_pages([
                 'before' => '<div class = "page-links">' . esc_html('Pages:' , 'Cornus'),
                 'after'  => '</div>',

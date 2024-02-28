@@ -6,9 +6,8 @@
 ?>
 
 <div class="entry-meta mb-3" style="text-align: center;">
- <?php 
+ <?php
     Cornus_posted_on(); 
     Cornus_posted_by();
- ?>
- 
+ ?> 
 </div>

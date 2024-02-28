@@ -111,3 +111,28 @@ function Cornus_read_more($more = '')
 
     return $more;
 }
+
+function Cornus_pagination(){
+    // previous and next method
+                // previous_post_link();
+                // next_post_link();
+
+    //numbering method
+    $allowed_html = [
+        'span' => [
+            'class' => []
+        ],
+
+        'a' => [
+            'class' => [],
+            'href' => []
+        ]
+    ];
+
+    $args = [
+        'before_page_number' => '<span class = "btn border border-secondary mr-2 mb-2">',
+        'after_page_number' => '</span>'
+    ];
+
+    printf( '<nav class = "Cornus-pagination clearfix">%s</nav>' , wp_kses(paginate_links($args) , $allowed_html));
+}

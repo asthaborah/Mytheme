@@ -44,6 +44,17 @@ get_header();
             get_template_part('template-parts/content-none');   
         endif;
         ?>
+        <div class="container">
+            <?php 
+            // previous and next method
+                // previous_post_link();
+                // next_post_link();
+
+            //numbering method
+
+            
+            ?>
+        </div>
     </main>
 </div>
 

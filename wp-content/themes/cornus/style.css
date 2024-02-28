@@ -33,3 +33,8 @@ img{
     background-color: gray;
     color: fff;
 }
+
+#calendar_wrap #wp-calendar{
+    width: 50%;
+    margin: auto;  
+}

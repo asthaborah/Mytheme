@@ -17,6 +17,7 @@ class CORNUS_THEME{
     use singleton;
     protected function __construct(){
         //load class
+        Sidebars::get_instance();
         Menus::get_instance();
         Assets::get_instance();
         Meta_Boxes::get_instance();

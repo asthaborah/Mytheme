@@ -1,0 +1,16 @@
+{
+  "name": "cornus",
+  "version": "1.0.0",
+  "description": "Cornus theme packages",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["wordpress" , "themes"],
+  "author": "Astha Borah",
+  "license": "MIT",
+  "private" : true,
+  "browserslist": [
+    "defaults"
+  ]
+}

@@ -1,1 +1,5 @@
-import "./Clock";
+import './Clock';
+
+//Images.
+
+import '../img/cat.jpg';

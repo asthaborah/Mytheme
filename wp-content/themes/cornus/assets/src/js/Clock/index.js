@@ -1,6 +1,3 @@
-/****Clock*****/
-// Self evoking function
-
 ( function ( $ ) {
 	class Clock {
 		constructor() {

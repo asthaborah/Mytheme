@@ -16,4 +16,5 @@ const output = {
 module.exports = (env , argv) => ({
     entry : entry,
     output : output,
+    devtool : 'source-map'
 });

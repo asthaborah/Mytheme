@@ -1,4 +1,4 @@
-import './Clock';
+import './clock';
 
 //Images.
 

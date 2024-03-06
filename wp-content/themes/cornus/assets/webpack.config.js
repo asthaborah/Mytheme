@@ -1,10 +1,14 @@
 const path = require( 'path' );
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CleanWebpackPlugin = require( 'clean-webpack-plugin' );
+const {CleanWebpackPlugin} = require( 'clean-webpack-plugin' );
+const OptimizeCssAssetsPlugin = require( 'css-minimizer-webpack-plugin' );
+const cssnano = require( 'cssnano' );
+const TerserJSPlugin = require( 'terser-webpack-plugin' );
 
 
-const JS_DIR = path.resolve(__dirname , '/src/js');
-const IMG_DIR = path.resolve(__dirname , '/src/img');
+
+const JS_DIR = path.resolve(__dirname , 'src/js');
+const IMG_DIR = path.resolve(__dirname , 'src/img');
 const BUILD_DIR = path.resolve(__dirname , 'build');
 
 const entry = {
@@ -38,7 +42,7 @@ const rules = [
         use:[
                 {
                     loader: 'file-loader',
-                    Options: {
+                    options: {
                         name: '[path][name].[ext]',
                         publicPath: 'production' === process.env.NODE_ENV ? '../' : '../..',
                     },
@@ -65,6 +69,23 @@ module.exports = (env , argv) => ({
     devtool : 'source-map',
     module : {
         rules : rules,
+    },
+    optimization: {
+        minimizer: [
+            new OptimizeCssAssetsPlugin({
+                minimizerOptions:{
+                    minimizerImplementation: cssnano,
+                }
+            }),
+            new TerserJSPlugin({
+                // Cache: false,
+                parallel: true,
+                terserOptions: {
+                    // Specify your Terser options here
+                    sourceMap: false, // Example: sourceMap option
+                },
+            }),
+        ]
     },
     plugins: plugins( argv ),
     externals: {

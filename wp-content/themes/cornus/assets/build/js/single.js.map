@@ -1,0 +1,1 @@
+{"version":3,"file":"js/single.js","mappings":";;;;;AAAAA,OAAO,CAACC,GAAG,CAAC,OAAO,CAAC,C","sources":["webpack://cornus/./src/js/single.js"],"sourcesContent":["console.log(\"hello\");"],"names":["console","log"],"sourceRoot":""}

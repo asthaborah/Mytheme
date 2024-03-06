@@ -36,8 +36,7 @@ class Assets{
 
     public function register_scripts(){
         // Registering scripts 
-        wp_register_script('main-js', CORNUS_DIR_URI . '/assets/src/js/main.js', ['jquery'], filemtime(CORNUS_DIR_PATH . '/assets/src/js/main.js'), true);
-        wp_script_add_data('main-js', 'type', 'module');
+        wp_register_script('main-js', CORNUS_BUILD_JS_URI . '/main.js', ['jquery'], filemtime(CORNUS_BUILD_JS_DIR_PATH . '/main.js'), true);
         wp_register_script('bootstrap-js', CORNUS_DIR_URI . '/assets/src/Library/js/bootstrap.min.js', ['jquery'], false, true);
 
         // Enqueue scripts

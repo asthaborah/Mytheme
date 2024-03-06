@@ -28,6 +28,7 @@ class Assets{
         //Register styles
         wp_register_style('style-css' , get_stylesheet_uri() , [] , filemtime(CORNUS_DIR_PATH . '/style.css') , 'all');
         wp_register_style('bootstrap-css' , CORNUS_DIR_URI . '/assets/src/Library/css/bootstrap.min.css', [] , false , 'all');
+        wp_enqueue_style('fonts-css' , get_template_directory_uri() . '/assets/src/library/fonts/fonts.css' , [] , false , 'all');
 
         // Enqueue styles
         wp_enqueue_style('style-css');

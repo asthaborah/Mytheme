@@ -38,3 +38,7 @@ img{
     width: 50%;
     margin: auto;  
 }
+
+body{
+    font-family: 'Lato' , sans-serif !important;
+}

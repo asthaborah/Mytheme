@@ -77,8 +77,26 @@ class CORNUS_THEME{
             'script',
             'style',
         ]);
+        /**
+         * Loads the editor styles in the gutenberg editor
+         * 
+         * Editor styles allow you to provide the css used by wordpress so that it can match the frontend styling
+         * If we don't add this , the editor styles will only load in the classic editor (Tiny mice)
+         */
+        add_theme_support('edior-styles');
 
-        add_editor_style();
+        /**
+         * It allows you to link a custom stylesheet file to the tinyMCE edior within the post edit screen
+         * 
+         * Add Path to our custom editor style.
+         * 
+         * Since we are not passing any paramter to the function
+         * It will by default, link the editor-style.css file located directly under the current thme directory
+         * You can add 'editor.css' if you like to support TinyMCE editor styles
+         * 
+         *
+         */
+        add_editor_style('assets/build/css/editor.css');
 
         add_theme_support('wp-block-styles');
 

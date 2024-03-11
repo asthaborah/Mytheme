@@ -101,7 +101,7 @@ function Cornus_read_more($more = '')
     if (!is_single()) { //checks if the page is blog page or not
     ?>
             <?php
-                $more = sprintf('<div class="read-more" style = "text-align:center;"><button class ="mt-4 btn btn-info"><a class = "Cornus-read-more text-white" href = "%1$s">%2$s</a></button></div>',
+                $more = sprintf('<div class="read-more" style = "text-align:center;"><a class = "Cornus-read-more text-white" href = "%1$s"><button class ="mt-4 btn btn-info">%2$s</button></a></div>',
                 get_permalink(get_the_ID()),
                 __('Read More', 'Cornus')
             );

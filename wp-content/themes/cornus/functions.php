@@ -38,12 +38,12 @@
 
  //defining build css path for theme url path
  if(!defined('CORNUS_BUILD_CSS_DIR_PATH')){
-  define('CORNUS_BUILD_CSS_DIR_PATH' , untrailingslashit(get_template_directory()) . '/build/css'); // returns the build css path of the main theme
+  define('CORNUS_BUILD_CSS_DIR_PATH' , untrailingslashit(get_template_directory()) . '/assets/build/css'); // returns the build css path of the main theme
  }
 
  //defining build css path for theme url
  if(!defined('CORNUS_BUILD_CSS_URI')){
-  define('CORNUS_BUILD_CSS_URI' , untrailingslashit(get_template_directory_uri()) . '/build/css'); // returns the build css path of the main theme
+  define('CORNUS_BUILD_CSS_URI' , untrailingslashit(get_template_directory_uri()) . '/assets/build/css'); // returns the build css path of the main theme
  }
 
  require_once CORNUS_DIR_PATH . "/inc/helpers/autoloader.php";

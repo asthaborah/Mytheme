@@ -15,31 +15,6 @@
     Use it to make something cool, have fun, and share what you've learned with others.
 */
 
-img{
-    width: 100%;
-    height: auto;
-}
 
-/* Entry Meta*/
-.updated:not(.published){
-    display: none;
-}
 
-.nav-item:hover .dropdown-menu:not(.show){
-    display: block;
-}
-
-.page-numbers.current > span{
-    background-color: gray;
-    color: fff;
-}
-
-#calendar_wrap #wp-calendar{
-    width: 50%;
-    margin: auto;  
-}
-
-body{
-    font-family: 'Lato' , sans-serif !important;
-}
 

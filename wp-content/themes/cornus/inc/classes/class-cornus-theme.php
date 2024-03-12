@@ -99,6 +99,9 @@ class CORNUS_THEME{
          */
         add_editor_style('assets/build/css/editor.css');
 
+        //Remove the core block patterns
+        remove_theme_support('core-block-patterns');
+
         add_theme_support('wp-block-styles');
 
         add_theme_support('align-wide');

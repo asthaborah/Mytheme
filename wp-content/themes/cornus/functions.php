@@ -57,5 +57,14 @@
 
  cornus_theme_get_instance();
 
+ //Remove Gutenberg block lirary css from loading on the frontend
+//  function ebayads_remove_block_styles(){
+//   wp_dequeue_style('wp-block-library');
+//   wp_dequeue_style('wp-block-library-theme');
+//   wp_dequeue_style('wc-block-style'); //remove WooCommerce block css
+//  }
+
+//  add_action('wp_enqueue_scripts' , 'ebayads_remove_block_styles' , 100);
+
 
 

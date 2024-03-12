@@ -21,6 +21,7 @@ class CORNUS_THEME{
         Menus::get_instance();
         Assets::get_instance();
         Meta_Boxes::get_instance();
+        Block_Patterns::get_instance();
         $this-> setup_hooks();
     }
 
@@ -83,7 +84,7 @@ class CORNUS_THEME{
          * Editor styles allow you to provide the css used by wordpress so that it can match the frontend styling
          * If we don't add this , the editor styles will only load in the classic editor (Tiny mice)
          */
-        add_theme_support('edior-styles');
+        add_theme_support('editor-styles');
 
         /**
          * It allows you to link a custom stylesheet file to the tinyMCE edior within the post edit screen

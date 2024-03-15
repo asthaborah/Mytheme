@@ -18,7 +18,12 @@
 
  //defining build path for theme url
  if(!defined('CORNUS_BUILD_URI')){
-  define('CORNUS_BUILD_URI' , untrailingslashit(get_template_directory_uri()) . '/build'); // returns the build uri of the main theme
+  define('CORNUS_BUILD_URI' , untrailingslashit(get_template_directory_uri()) . '/assets/build'); // returns the build uri of the main theme
+ }
+
+ //defining build path for theme 
+ if(!defined('CORNUS_BUILD_PATH')){
+  define('CORNUS_BUILD_PATH' , untrailingslashit(get_template_directory()) . '/assets/build'); // returns the build uri of the main theme
  }
 
  //defining javascript build path for theme url path
@@ -33,7 +38,7 @@
 
  //defining build image path for theme url
  if(!defined('CORNUS_BUILD_IMG_URI')){
-  define('CORNUS_BUILD_IMG_URI' , untrailingslashit(get_template_directory_uri()) . '/build/src/img'); // returns the build image path of the main theme
+  define('CORNUS_BUILD_IMG_URI' , untrailingslashit(get_template_directory_uri()) . '/assets/build/src/img'); // returns the build image path of the main theme
  }
 
  //defining build css path for theme url path

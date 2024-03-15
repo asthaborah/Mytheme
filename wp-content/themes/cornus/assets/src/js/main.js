@@ -8,5 +8,7 @@ import '../sass/main.scss';
 
 import '../img/cat.jpg';
 
+import '../img/patterns/cover.jpg';
+
 
 

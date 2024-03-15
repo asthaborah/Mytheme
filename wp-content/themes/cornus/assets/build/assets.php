@@ -1,18 +1,21 @@
 <?php return array(
     'js/main.js' => array(
         'dependencies' => array('wp-polyfill'),
-        'version' => 'a431acc408057a108381'
+        'version' => 'f285b572047f4ca14f3f'
     ),
+
     'js/single.js' => array(
         'dependencies' => array('wp-polyfill'),
-        'version' => '30f4e021a9ed033b2ed9'
+        'version' => 'bdc935ebdf047ea58798'
     ),
+
     'js/editor.js' => array(
         'dependencies' => array('wp-polyfill'),
-        'version' => 'beaa861542e2c25ebd34'
+        'version' => '5cbe88119c8a37747ba8'
     ),
+
     'js/blocks.js' => array(
         'dependencies' => array('wp-polyfill'),
-        'version' => '1cdb6baa9dc6fbe22b43'
+        'version' => '6417651055f5fa1bacf7'
     )
 );

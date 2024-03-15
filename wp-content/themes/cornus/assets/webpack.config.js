@@ -71,8 +71,8 @@ const plugins = (argv) => [
     }),
 
     new DependancyExtractionWebpackPlugin({
-        injectPolyfill: true,
-        combineAssets: true,
+        injectPolyfill: true, // for translation into the older version of browsers
+        combineAssets: true, //The combineAssets: true configuration option is used in the context of       WordPress Gutenberg block development to combine assets, typically JavaScript and CSS files, into a single file during the build process.
     })
 
 ];

@@ -1,73 +1,91 @@
 <?php 
 /**
- * Main template
+ * Main template file
+ * 
  * @package Cornus
  */
 
+// Include header
 get_header();
 ?>
 
 <div id="primary">
     <main id="main" class="site-main mt-5" role="main">
 
-        <!-- extracting post -->
         <?php 
-
-        if(have_posts()) :  // checks if the post is there or not 
+        // Check if there are posts available
+        if (have_posts()) :  
             ?>
             <div class="container">
-                <!-- getting the title of the page -->
                 <?php 
-                    if(is_home() && !is_front_page()){
-                        ?>
-                            <header class="mb-5">
-                                <h1 class="page-title screen-reader-text">
-                                    <?php single_post_title();?> <!-- to get the title of the blog -->
-                                    
-                                </h1>
-                            </header>
-                        <?php
-                    }
+                // Display page title if on the home page but not the front page
+                if (is_home() && !is_front_page()) {
+                    ?>
+                    <header class="mb-5">
+                        <h1 class="page-title screen-reader-text">
+                            <?php single_post_title(); ?>
+                        </h1>
+                    </header>
+                    <?php
+                }
                 ?>
                 
-                <!-- adding grid -->
-                    
                 <div class="row">
                     <?php
-                        $index = 0;
-                        $no_of_columns = 3;
-                        // loop starts here 
-                        while(have_posts()) : the_post();
-                        //checking if the remainder is 0 then only print column
-                        if(0 === $index % $no_of_columns){
-                            ?>
-                            <div class="col-lg-4 col-md-6 col-sm-12">    
+                    $index = 0; // Initialize post counter
+                    $no_of_columns = 3; // Number of columns per row
+                    
+                    // Start the loop to display posts
+                    while (have_posts()) : the_post();
+                    
+                        // Start a new row every 3rd post
+                        if ($index % $no_of_columns === 0) {
+                            echo '<div class="row">';
+                        }
+                        ?>
+                        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">    
                             <?php 
-                        }
-                        get_template_part('template-parts/content');
-                                   
-                        $index++;
-                        if(0 !== $index && 0 === $index % $no_of_columns){ //index is not 0 but it's remainder is getting 0 then end the div
+                            // Include template part for displaying post content
+                            get_template_part('template-parts/content');
                             ?>
-                            </div>
-                            <?php
+                        </div>
+                        <?php
+                        $index++; // Increment post counter
+                        
+                        // Close the row after every 3rd post
+                        if ($index % $no_of_columns === 0) {
+                            echo '</div>'; // Close row
                         }
-                        endwhile;
+                        
+                    endwhile;
+                    
+                    // Close the last row if it's not already closed
+                    if ($index % $no_of_columns !== 0) {
+                        echo '</div>'; // Close row
+                    }
                     ?>
-                </div>
-            </div>
+                </div> <!-- .row -->
+
+            </div> <!-- .container -->
+
             <?php
         else : 
+            // If no posts found, include template part for no content message
             get_template_part('template-parts/content-none');   
         endif;
-        
         ?>
+        
         <div class="container">
-            <?php Cornus_pagination(); ?>
-        </div>     
+            <?php 
+            // Include pagination function
+            Cornus_pagination(); 
+            ?>
+        </div>
+        
     </main>
 </div>
 
 <?php 
+// Include footer
 get_footer();
 ?>

@@ -29,9 +29,11 @@ get_header();
                         <?php
                     }
                 ?>
-                    <!-- adding grid -->
-                    <div class="row">
-                        <?php
+                
+                <!-- adding grid -->
+                    
+                <div class="row">
+                    <?php
                         $index = 0;
                         $no_of_columns = 3;
                         // loop starts here 
@@ -51,8 +53,8 @@ get_header();
                             <?php
                         }
                         endwhile;
-                        ?>
-                    </div>
+                    ?>
+                </div>
             </div>
             <?php
         else : 

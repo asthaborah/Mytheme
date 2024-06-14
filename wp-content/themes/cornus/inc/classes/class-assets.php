@@ -46,45 +46,53 @@ class Assets{
         wp_enqueue_script('bootstrap-js');
     }
 
-    public function enqueue_editor_assets(){
-        $asset_config_file = sprintf('%s/assets.php' , CORNUS_BUILD_PATH);
-        if(!file_exists($asset_config_file)){
-            return;
-        }
+    /**
+	 * Enqueue editor scripts and styles.
+	 */
+	public function enqueue_editor_assets() {
 
-        $asset_config = require_once $asset_config_file;
+		$asset_config_file = sprintf( '%s/assets.php', CORNUS_BUILD_PATH );
 
-        if(empty($asset_config['js/editor.js'])){
-            return;
-        }
+		if ( ! file_exists( $asset_config_file ) ) {
+			return;
+		}
 
-        $editor_asset = $asset_config['js/editor.js'];
-        $js_dependencies = (!empty($editor_asset['dependencies'])) ? $editor_asset['dependencies'] : [];
-        $version = (!empty($editor_asset['version'])) ? $editor_asset['version'] : filemtime($asset_config_file);
+		$asset_config = require_once $asset_config_file;
 
-        //Theme Gutenbery block JS
-        if(is_admin()){
-            wp_enqueue_script(
-                'cornus-block-js',
-                CORNUS_BUILD_JS_URI . '/blocks.js',
-                $js_dependencies,
-                $version,
-                true
-            );
-        }
+		if ( empty( $asset_config['js/editor.js'] ) ) {
+			return;
+		}
 
-        //Theme gutenberg blocks css
-        $css_dependencies = [
-            'wp-block-library-theme',
-            'wp-block-library',
-        ];
+		$editor_asset    = $asset_config['js/editor.js'];
+		$js_dependencies = ( ! empty( $editor_asset['dependencies'] ) ) ? $editor_asset['dependencies'] : [];
+		$version         = ( ! empty( $editor_asset['version'] ) ) ? $editor_asset['version'] : filemtime( $asset_config_file );
+		$arr = ['wp-blocks', 'wp-i18n'];
+		$final = array_merge($js_dependencies , $arr);
 
-        wp_enqueue_style(
-            'cornus-blocks-css',
-            CORNUS_BUILD_CSS_URI . '/blocks.css',
-            $css_dependencies,
-            filemtime(CORNUS_BUILD_CSS_DIR_PATH . '/blocks.css'),
-            'all'
-        );
-    }
+		// Theme Gutenberg blocks JS.
+		if ( is_admin() ) {
+			wp_enqueue_script(
+				'Cornus-blocks-js',
+				CORNUS_BUILD_JS_URI . '/blocks.js',
+				$final,
+				$version,
+				true
+			);
+		}
+
+		// Theme Gutenberg blocks CSS.
+		$css_dependencies = [
+			'wp-block-library-theme',
+			'wp-block-library',
+		];
+
+		wp_enqueue_style(
+			'Cornus-blocks-css',
+			CORNUS_BUILD_CSS_URI . '/blocks.css',
+			$css_dependencies,
+			filemtime( CORNUS_BUILD_CSS_DIR_PATH . '/blocks.css' ),
+			'all'
+		);
+
+	}
 }

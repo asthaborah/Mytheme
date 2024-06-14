@@ -21,7 +21,7 @@ class Blocks{
          * Actions.
          */
         
-        add_action('block_categories' , [$this , 'add_block_categories']);
+        add_action('block_categories_all' , [$this , 'add_block_categories']);
     }
 
     public function add_block_categories($categories){
